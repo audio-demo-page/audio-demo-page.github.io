@@ -3,128 +3,217 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Audio Samples for Submission</title>
+    <title>Personalized Multi-Dialect Opera Synthesis</title>
     <style>
+        :root {
+            --primary-color: #2c3e50;
+            --accent-color: #e67e22; /* Warm color for personalization */
+            --bg-color: #fcfcfc;
+            --box-bg: #ffffff;
+        }
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            max-width: 800px;
+            max-width: 900px;
             margin: 40px auto;
             padding: 20px;
-            background-color: #fff;
+            background-color: var(--bg-color);
             color: #333;
             line-height: 1.6;
         }
         h1 {
-            border-bottom: 2px solid #eee;
-            padding-bottom: 10px;
-            color: #2c3e50;
+            border-bottom: 3px solid #eee;
+            padding-bottom: 15px;
+            color: var(--primary-color);
+        }
+        h1 span {
+            font-size: 0.6em;
+            color: #7f8c8d;
+            font-weight: normal;
+            display: block;
+            margin-top: 5px;
         }
         p.intro {
             font-size: 1.1em;
-            margin-bottom: 30px;
+            margin-bottom: 40px;
             color: #555;
+            background: #eef2f5;
+            padding: 15px;
+            border-left: 5px solid var(--primary-color);
+            border-radius: 4px;
         }
         .sample-box {
-            background: #f8f9fa;
+            background: var(--box-bg);
             border: 1px solid #e9ecef;
-            padding: 20px;
-            margin-bottom: 25px;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            padding: 25px;
+            margin-bottom: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.04);
+            transition: transform 0.2s;
+        }
+        .sample-box:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.08);
         }
         .sample-header {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            margin-bottom: 10px;
+            margin-bottom: 15px;
         }
         .sample-title {
-            font-weight: bold;
-            font-size: 1.2em;
-            color: #2c3e50;
+            font-weight: 700;
+            font-size: 1.3em;
+            color: var(--primary-color);
+        }
+        .tag-container {
+            display: flex;
+            gap: 8px;
         }
         .sample-tag {
             background-color: #e3f2fd;
             color: #0d47a1;
-            padding: 2px 8px;
-            border-radius: 4px;
+            padding: 4px 10px;
+            border-radius: 20px;
             font-size: 0.85em;
-            font-weight: bold;
+            font-weight: 600;
+        }
+        /* Style for the Personalized Feature */
+        .tag-personalized {
+            background-color: #fff3e0;
+            color: #e65100;
+            border: 1px solid #ffcc80;
         }
         .sample-desc {
             font-size: 0.95em;
             color: #666;
             margin-bottom: 15px;
-            font-style: italic;
         }
+        
+        /* Lyrics Box Styling */
+        .lyrics-container {
+            background-color: #f8f9fa;
+            border-left: 4px solid var(--accent-color);
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 4px;
+            font-size: 0.9em;
+            color: #444;
+        }
+        .lyrics-title {
+            font-weight: bold;
+            color: var(--accent-color);
+            margin-bottom: 8px;
+            display: block;
+            text-transform: uppercase;
+            font-size: 0.8em;
+            letter-spacing: 1px;
+        }
+        .lyrics-content {
+            white-space: pre-wrap;
+            font-family: 'Courier New', Courier, monospace;
+            line-height: 1.8;
+            max-height: 200px;
+            overflow-y: auto;
+        }
+        .highlight-dialect {
+            background-color: #fff9c4;
+            padding: 0 2px;
+            border-radius: 2px;
+            font-weight: bold;
+            color: #333;
+        }
+
         audio {
             width: 100%;
-            margin-top: 5px;
+            margin-top: 10px;
             outline: none;
+            height: 40px;
         }
     </style>
 </head>
 <body>
 
-    <h1>Supplementary Audio Samples</h1>
+    <h1>
+        Project: Multi-Dialect Opera Synthesis
+        <span>Addressing the Cultural Needs of New Generation Immigrants</span>
+    </h1>
+
     <p class="intro">
-        This page demonstrates the generated audio samples for the paper submission. 
-        Each sample represents a different regional opera style generated by our model.
+        <strong>Overview:</strong> This demo illustrates our model's capability to preserve traditional vocal characteristics while adapting to personalized user inputs. 
+        <br><br>
+        Feature Highlight: <strong>Dialect Mixing</strong> (e.g., Cantonese + Mandarin) caters to immigrant communities who retain specific dialect phrases ("Code-Switching") within standard artistic expression.
     </p>
 
-    <div class="sample-box">
+    <div class="sample-box" style="border: 2px solid #ffcc80;">
         <div class="sample-header">
-            <span class="sample-title">Sample 1: Peking Opera Style</span>
-            <span class="sample-tag">Beijing</span>
+            <span class="sample-title">Demo 1: Personalized Generation (Yue Opera Style)</span>
+            <div class="tag-container">
+                <span class="sample-tag tag-personalized">Personalized Dimension</span>
+                <span class="sample-tag">Zhejiang/Shaoxing</span>
+            </div>
         </div>
         <div class="sample-desc">
-            Input Text: "Generates a clear and resonant melody typical of the Jinghu accompaniment..."
+            <strong>Context:</strong> Generating content for a user with Cantonese background living overseas. The model integrates Cantonese colloquialisms into the intro while maintaining the classic lyrical flow of Yue Opera (Butterfly Lovers theme).
         </div>
-        <audio controls src="PekingOpera.mp3"></audio>
+
+        <div class="lyrics-container">
+            <span class="lyrics-title">Input Text (LRC Format with Dialect Markers):</span>
+            <div class="lyrics-content">
+[00:15.00] <span class="highlight-dialect">心事重重邊個知</span> (Cantonese: "Who knows my heavy heart?")
+[00:20.00] 紅帔輕舞鳳紋飄
+[00:25.65] 正是从来雨打中秋夜
+[00:30.30] 更值风摇长命灯
+[00:34.90] 世间何物似情浓
+[00:39.55] 整一片断魂心痛
+[00:46.00] 月下獨步憶往昔
+[00:52.00] 願化彩蝶隨風去
+[00:58.00] 不負春光不負卿
+[01:05.00] 啊...</div>
+        </div>
+
+        <audio controls src="yueju1.wav"></audio>
     </div>
 
     <div class="sample-box">
         <div class="sample-header">
-            <span class="sample-title">Sample 2: Yue Opera Style</span>
-            <span class="sample-tag">Zhejiang</span>
+            <span class="sample-title">Demo 2: Peking Opera (Jingju)</span>
+            <div class="tag-container">
+                <span class="sample-tag">Beijing</span>
+                <span class="sample-tag">Standard Mandarin</span>
+            </div>
         </div>
         <div class="sample-desc">
-            Input Text: "Features a soft, lyrical singing style characteristic of the southern regions..."
+            Classic Jinghu accompaniment style with resonant vocal projection.
         </div>
-        <audio controls src="YueOpera.mp3"></audio>
+        <audio controls src="jingju_3_4_64.wav"></audio>
     </div>
 
     <div class="sample-box">
         <div class="sample-header">
-            <span class="sample-title">Sample 3: Cantonese Opera Style</span>
-            <span class="sample-tag">Guangdong</span>
+            <span class="sample-title">Demo 3: Kunqu Opera</span>
+            <div class="tag-container">
+                <span class="sample-tag">Jiangsu/Suzhou</span>
+                <span class="sample-tag">UNESCO Heritage</span>
+            </div>
         </div>
         <div class="sample-desc">
-            Input Text: "Demonstrates the distinct pitch variations and instrumentation of Cantonese opera..."
+            Known as the "Mother of Chinese Operas," featuring a delicate, flowing melody and controlled vocal techniques.
         </div>
-        <audio controls src="CantoneseOpera.mp3"></audio>
+        <audio controls src="kunqu_3_4_64.wav"></audio>
     </div>
 
     <div class="sample-box">
         <div class="sample-header">
-            <span class="sample-title">Sample 4: Huangmei Opera Style</span>
-            <span class="sample-tag">Anhui</span>
+            <span class="sample-title">Demo 4: Huangmei Opera</span>
+            <div class="tag-container">
+                <span class="sample-tag">Anhui</span>
+                <span class="sample-tag">Folk Origin</span>
+            </div>
         </div>
         <div class="sample-desc">
-            Input Text: "A folk melody with light and catchy rhythms..."
+            Characterized by a natural, sweet singing voice and light, catchy rhythms popular in central China.
         </div>
-        <audio controls src="HuangmeiOpera.mp3"></audio>
-    </div>
-
-    <div class="sample-box">
-        <div class="sample-header">
-            <span class="sample-title">Sample 5: Shaanbei Folk/Opera</span>
-            <span class="sample-tag">Shaanxi</span>
-        </div>
-        <div class="sample-desc">
-            Input Text: "High-pitched, loud, and unconstrained singing style from the Loess Plateau..."
-        </div>
-        <audio controls src="ShaanbeiOpera.mp3"></audio>
+        <audio controls src="huangmeixi_3_3_64.wav"></audio>
     </div>
 
 </body>
