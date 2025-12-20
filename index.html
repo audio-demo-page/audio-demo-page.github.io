@@ -3,18 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Multi-Dialect Opera Synthesis Demo</title>
+    <title>Socio-Cultural Opera Synthesis: Heritage & Migration</title>
     <style>
         :root {
             --primary-color: #2c3e50;
-            --accent-color: #e67e22; /* Orange for personalization highlight */
+            --group-a-color: #27ae60; /* Green for "Rooted/Home" */
+            --group-b-color: #d35400; /* Orange for "Wandering/Migration" */
             --bg-color: #f9f9f9;
             --box-bg: #ffffff;
             --text-color: #333;
         }
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            max-width: 850px;
+            max-width: 900px;
             margin: 40px auto;
             padding: 20px;
             background-color: var(--bg-color);
@@ -36,7 +37,7 @@
         }
         p.intro {
             font-size: 1.05em;
-            margin-bottom: 35px;
+            margin-bottom: 40px;
             color: #555;
             background: #eef2f5;
             padding: 20px;
@@ -44,6 +45,22 @@
             border-radius: 4px;
         }
         
+        /* Section Dividers */
+        .section-title {
+            margin-top: 50px;
+            margin-bottom: 20px;
+            font-size: 1.4em;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 10px;
+        }
+        .section-icon {
+            margin-right: 10px;
+            font-size: 1.2em;
+        }
+
         /* Box Styling */
         .sample-box {
             background: var(--box-bg);
@@ -53,22 +70,21 @@
             border-radius: 10px;
             box-shadow: 0 2px 5px rgba(0,0,0,0.05);
             transition: transform 0.2s;
+            position: relative;
         }
         .sample-box:hover {
             transform: translateY(-2px);
             box-shadow: 0 5px 15px rgba(0,0,0,0.08);
         }
 
-        /* Personalized Box Special Styling */
-        .sample-box.personalized {
-            border: 2px solid #ffcc80; /* Orange border to highlight */
-            background: #fffdf9;
-        }
+        /* Group Specific Styling */
+        .group-a { border-left: 6px solid var(--group-a-color); }
+        .group-b { border-left: 6px solid var(--group-b-color); }
 
         .sample-header {
             display: flex;
             justify-content: space-between;
-            align-items: flex-start; /* Align top for multi-line title */
+            align-items: flex-start;
             margin-bottom: 15px;
             flex-wrap: wrap;
             gap: 10px;
@@ -91,53 +107,53 @@
             border-radius: 6px;
             font-size: 0.8em;
             font-weight: 600;
-            white-space: nowrap;
         }
-        .tag-personalized {
-            background-color: #fff3e0;
-            color: #e65100;
-            border: 1px solid #ffe0b2;
-        }
-
+        
         .sample-desc {
             font-size: 0.95em;
             color: #666;
             margin-bottom: 15px;
         }
+        
+        .context-note {
+            font-style: italic;
+            color: #555;
+            background: rgba(0,0,0,0.03);
+            padding: 10px;
+            border-radius: 4px;
+            margin-bottom: 15px;
+            font-size: 0.95em;
+        }
 
         /* Lyrics Box */
         .lyrics-container {
             background-color: #f8f9fa;
-            border-left: 4px solid var(--accent-color);
+            border: 1px solid #eee;
             padding: 15px;
             margin: 15px 0;
             border-radius: 4px;
             font-size: 0.9em;
             color: #444;
         }
-        .lyrics-title {
-            font-weight: bold;
-            color: var(--accent-color);
-            margin-bottom: 8px;
-            display: block;
-            text-transform: uppercase;
-            font-size: 0.75em;
-            letter-spacing: 0.5px;
-        }
         .lyrics-content {
             white-space: pre-wrap;
             font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
             line-height: 1.7;
-            max-height: 180px;
-            overflow-y: auto;
         }
-        .highlight-dialect {
-            background-color: #fff9c4; /* Yellow highlight */
+        .highlight-mandarin {
+            background-color: #e8f5e9; /* Greenish */
+            color: #2e7d32;
             padding: 0 4px;
             border-radius: 3px;
             font-weight: bold;
-            color: #d35400;
-            border-bottom: 1px dotted #d35400;
+        }
+        .highlight-dialect {
+            background-color: #fff3e0; /* Orangish */
+            color: #e65100;
+            padding: 0 4px;
+            border-radius: 3px;
+            font-weight: bold;
+            border-bottom: 2px solid #ffcc80;
         }
 
         audio {
@@ -151,86 +167,151 @@
 <body>
 
     <h1>
-        Project: Multi-Dialect Opera Synthesis
-        <span>Addressing the Cultural Needs of New Generation Immigrants</span>
+        Project: Socio-Cultural Opera Synthesis
+        <span>Adapting Traditional Arts for the Post-Hukou Reform Generation</span>
     </h1>
 
     <p class="intro">
-        <strong>Overview:</strong> This demo illustrates our model's capability to preserve traditional vocal characteristics while adapting to personalized user inputs.
-        <br><br>
-        Feature Highlight: <strong>Dialect Mixing</strong> (e.g., Cantonese + Mandarin) caters to immigrant communities who retain specific dialect phrases ("Code-Switching") within standard artistic expression.
+        <strong>Overview:</strong> This project addresses the diverse cultural needs of the new generation. 
+        We identify two distinct user personas emerging from urbanization: 
+        the <strong>"Localized Natives"</strong> (宅居的一代 - Rooted but Mandarin-speaking) and the <strong>"New Migrants"</strong> (云游的一代 - Mobile and Multi-dialectal).
     </p>
 
-    <div class="sample-box personalized">
-        <div class="sample-header">
-            <span class="sample-title">Demo 1: Personalized Generation (Cantonese Opera)</span>
-            <div class="tag-container">
-                <span class="sample-tag tag-personalized">Personalized Dimension</span>
-                <span class="sample-tag">Guangdong / Hong Kong</span>
-            </div>
-        </div>
-        <div class="sample-desc">
-            <strong>Context:</strong> Generating content for a user with Cantonese background living overseas. The model integrates Cantonese colloquialisms into the intro while maintaining the pitch variations of traditional Cantonese Opera.
-        </div>
-
-        <div class="lyrics-container">
-            <span class="lyrics-title">Input Text (LRC Format with Dialect Markers):</span>
-            <div class="lyrics-content">
-[00:15.00] <span class="highlight-dialect">心事重重邊個知</span> (Cantonese Input: "Who knows my heart?")
-[00:20.00] 紅帔輕舞鳳紋飄
-[00:25.65] 正是从来雨打中秋夜
-[00:30.30] 更值风摇长命灯
-[00:34.90] 世间何物似情浓
-[00:39.55] 整一片断魂心痛
-[00:46.00] 月下獨步憶往昔
-[00:52.00] 願化彩蝶隨風去
-[00:58.00] 不負春光不負卿
-[01:05.00] 啊...</div>
-        </div>
-
-        <audio controls src="yueju1.wav"></audio>
+    <div class="section-title" style="color: var(--group-a-color);">
+        <span class="section-icon">🏠</span> Group A: "Localized Natives" (宅居的一代)
     </div>
+    <p style="margin-bottom: 20px; color: #666;">
+        Children growing up in the digital age (e.g., Greater Bay Area/Lingdingyang) who primarily speak <strong>Mandarin</strong> but desire the <strong>musical flavor</strong> of their regional heritage.
+    </p>
 
-    <div class="sample-box">
+    <div class="sample-box group-a">
         <div class="sample-header">
-            <span class="sample-title">Demo 2: Peking Opera (Jingju)</span>
+            <span class="sample-title">Scenario A: Mandarin Input -> Peking Style</span>
             <div class="tag-container">
-                <span class="sample-tag">Beijing</span>
+                <span class="sample-tag">Style Transfer</span>
                 <span class="sample-tag">Standard Mandarin</span>
             </div>
         </div>
+        <div class="context-note">
+            <strong>User Demand:</strong> "I want to sing with the resonance of the Jinghu, but using standard Mandarin lyrics I can understand."
+        </div>
         <div class="sample-desc">
-            Input Text: "Generates a clear and resonant melody typical of the Jinghu accompaniment..."
+            The model preserves the high-frequency resonance of Peking Opera while ensuring Mandarin intelligibility.
         </div>
         <audio controls src="jingju_3_4_64.wav"></audio>
     </div>
 
+    <div class="sample-box group-a">
+        <div class="sample-header">
+            <span class="sample-title">Scenario B: Folk Heritage Preservation</span>
+            <div class="tag-container">
+                <span class="sample-tag">Huangmei Style</span>
+                <span class="sample-tag">Mandarin Input</span>
+            </div>
+        </div>
+        <div class="sample-desc">
+            Huangmei Opera is known for its light, catchy rhythms. This model captures that essence using standard language input.
+        </div>
+        <audio controls src="huangmeixi_3_3_64.wav"></audio>
+    </div>
+
+
+    <div class="section-title" style="color: var(--group-b-color);">
+        <span class="section-icon">🌏</span> Group B: "The Mobile Generation" (云游的一代)
+    </div>
+    <p style="margin-bottom: 20px; color: #666;">
+        Children of the Hukou reform era. They are mobile, "cloud wandering," and their identity is a mosaic. 
+        They require <strong>Code-Switching</strong> (mixing dialects) to express their complex sense of belonging.
+    </p>
+
+    <div class="sample-box group-b">
+        <div class="sample-header">
+            <span class="sample-title">Scenario C: Dialect Code-Switching (Cantonese)</span>
+            <div class="tag-container">
+                <span class="sample-tag">Cantonese Opera</span>
+                <span class="sample-tag">Multi-Dialect Mixing</span>
+            </div>
+        </div>
+        <div class="context-note">
+            <strong>User Demand:</strong> "My home is everywhere. I speak Mandarin, but my emotions are in Cantonese."
+        </div>
+        
+        <div class="lyrics-container">
+            <div class="lyrics-content">
+[00:15.00] <span class="highlight-dialect">心事重重邊個知</span> (Cantonese: "Who knows my heart?")
+[00:20.00] <span class="highlight-mandarin">红帔轻舞凤纹飘</span> (Mandarin: "Red cape dancing...")
+[00:25.65] 正是从来雨打中秋夜
+[00:30.30] <span class="highlight-dialect">更值风摇长命灯</span> (Mixed: Cultural imagery)
+...
+            </div>
+        </div>
+
+        <div class="sample-desc">
+            Demonstrates the model's ability to seamlessly transition between specific Cantonese colloquialisms (input as text) and standard Mandarin flow.
+        </div>
+        <audio controls src="yueju1.wav"></audio>
+    </div>
+
+
+    <div class="section-title" style="color: #7f8c8d; border-top: 2px dashed #ccc; padding-top: 30px;">
+        <span class="section-icon">📂</span> Appendix: Baseline Model Archive
+    </div>
+    <p style="margin-bottom: 20px; color: #666;">
+        Original single-style generation models retained for reference (Standard Benchmarks).
+    </p>
+
     <div class="sample-box">
         <div class="sample-header">
-            <span class="sample-title">Demo 3: Kunqu Opera</span>
+            <span class="sample-title">Baseline 1: Kunqu Opera</span>
             <div class="tag-container">
-                <span class="sample-tag">Jiangsu / Suzhou</span>
+                <span class="sample-tag">Suzhou</span>
                 <span class="sample-tag">UNESCO Heritage</span>
             </div>
         </div>
         <div class="sample-desc">
-            Input Text: "Features a soft, lyrical singing style with controlled vocal techniques..."
+            Features the soft, water-mill singing style (Shuimoqiang) characteristic of Kunqu.
         </div>
         <audio controls src="kunqu_3_4_64.wav"></audio>
     </div>
 
     <div class="sample-box">
         <div class="sample-header">
-            <span class="sample-title">Demo 4: Huangmei Opera</span>
+            <span class="sample-title">Baseline 2: Shaanbei Folk</span>
             <div class="tag-container">
-                <span class="sample-tag">Anhui</span>
-                <span class="sample-tag">Folk Style</span>
+                <span class="sample-tag">Shaanxi</span>
+                <span class="sample-tag">High Pitch</span>
             </div>
         </div>
         <div class="sample-desc">
-            Input Text: "A folk melody with light and catchy rhythms typical of the Anhui region..."
+            High-pitched, loud, and unconstrained singing style from the Loess Plateau.
         </div>
-        <audio controls src="huangmeixi_3_3_64.wav"></audio>
+        <audio controls src="ShaanbeiOpera.mp3"></audio>
+    </div>
+
+    <div class="sample-box">
+        <div class="sample-header">
+            <span class="sample-title">Baseline 3: Standard Cantonese Opera</span>
+            <div class="tag-container">
+                <span class="sample-tag">Guangdong</span>
+            </div>
+        </div>
+        <div class="sample-desc">
+            Standard generation without dialect mixing (for comparison with Scenario C).
+        </div>
+        <audio controls src="CantoneseOpera.mp3"></audio>
+    </div>
+
+    <div class="sample-box">
+        <div class="sample-header">
+            <span class="sample-title">Baseline 4: Yue Opera (Shaoxing)</span>
+            <div class="tag-container">
+                <span class="sample-tag">Zhejiang</span>
+            </div>
+        </div>
+        <div class="sample-desc">
+            Standard lyrical singing style characteristic of the southern regions.
+        </div>
+        <audio controls src="YueOpera.mp3"></audio>
     </div>
 
 </body>
